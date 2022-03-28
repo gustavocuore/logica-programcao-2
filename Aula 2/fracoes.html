@@ -1,0 +1,33 @@
+<meta charset="UTF-8">
+<canvas width="600" height="400"></canvas>
+<script>
+	tela = document.querySelector("canvas");
+	pincel = tela.getContext("2d");
+
+	function desenhaQuadrado(x, y, tamanho, cor) {
+		pincel.fillStyle = cor;
+		pincel.fillRect(x, y, tamanho, tamanho);
+		fillStroke = "black";
+		pincel.strokeRect(x, y, tamanho, tamanho);
+	}
+
+	var localDesenhoX = parseInt(prompt("Insira o local X de desenho: "));
+	var localDesenhoY = parseInt(prompt("Insira o local Y de desenho: "));
+	var lado = parseInt(prompt("Insira o lado do quadrado de preenchimento"));
+	var total = parseInt(prompt("Insira quantos quadrados são no total"));
+	var preenchidos = parseInt(prompt("Insira quantos quadrados serão preenchidos com cor"));
+	var cor = prompt("Insira a cor dos que serão pintados (blue/ green/ red/ yellow)");
+
+	for(x = 0; x < total; x++) {
+		desenhaQuadrado(localDesenhoX, localDesenhoY, lado, "white");
+		localDesenhoX += lado;
+	}
+
+	localDesenhoX = 0;
+
+	for(x = 0; x < preenchidos; x++) {
+		desenhaQuadrado(localDesenhoX, localDesenhoY, lado, cor);
+		localDesenhoX += lado;
+	}
+
+</script>

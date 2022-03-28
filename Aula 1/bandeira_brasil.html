@@ -1,0 +1,26 @@
+<canvas width="600" height="400"></canvas>
+<script>
+	
+	var tela = document.querySelector("canvas");
+	var tinta = tela.getContext("2d");
+
+	//fundo verde
+	tinta.fillStyle="green";
+	tinta.fillRect(0, 0, 600, 400);
+
+	//losango amarelo
+	tinta.fillStyle="yellow";
+	tinta.beginPath();
+	tinta.moveTo(300, 50);
+	tinta.lineTo(550, 200);
+	tinta.lineTo(300, 350);
+	tinta.lineTo(50, 200);
+	tinta.fill()
+
+	//circulo azul
+	tinta.fillStyle="darkblue";
+	tinta.beginPath();
+	tinta.arc(300, 200, 100, 0, 2*3.14);
+	tinta.fill();
+
+</script>
